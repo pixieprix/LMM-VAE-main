@@ -1,0 +1,31 @@
+defaults:  
+    - _self_  
+    - override hydra/hydra_logging: disabled  
+    - override hydra/job_logging: disabled  
+
+flatten: False
+layer_structure: [784, 300, 50, 30]
+n_iter: 2000
+input_dim: 784
+with_ids: True
+digits_to_load: 10000
+max_rotation: 45
+linear_model: True 
+prob_decoder: True
+seed: 0
+data_generation: v3
+model_type: ConvVAE
+model_name: MNIST
+lr: ${lr} || 0.005
+clip_gradient: True
+grad_clip_norm: 0.5
+
+
+
+
+hydra:  
+    output_subdir: null  
+    run:  
+        dir: .
+
+
